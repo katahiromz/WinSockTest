@@ -35,8 +35,11 @@ int main(int argc, char **argv)
         return -1;
     }
 
+    char hostname[256];
+    gethostname(hostname, sizeof(hostname));
     int port = atoi(argv[1]);
     printf("server\n");
+    printf("hostname: %s\n", hostname);
     printf("port: %d\n", port);
 
     SOCKET sock0 = socket(AF_INET, SOCK_STREAM, 0);
