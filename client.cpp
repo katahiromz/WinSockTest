@@ -95,6 +95,7 @@ int main(int argc, char **argv)
             break;
     }
 
+    shutdown(sock, SD_BOTH);
     closesocket(sock);
 
     WSACleanup();
